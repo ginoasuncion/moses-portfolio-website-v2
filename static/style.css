@@ -1,0 +1,511 @@
+@font-face {
+    font-family: 'Big John PRO';
+    src: url('/static/fonts/BigJohn.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('/static/fonts/DMSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Global Styles */
+body, html {
+    background-color: #292929; 
+    color: black;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    font-weight: 400;
+    line-height: 44px;
+}
+
+#banner {
+    height: 100vh;
+    position: relative;
+}
+
+/* p5.js Sketch Section */
+#sketch-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #292929; /* Matches dark theme */
+}
+
+/* Case Study Section */
+.section-container, .case-study-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12vw;
+    gap: 50px;
+    box-sizing: border-box;
+    flex-direction: row;
+}
+
+/* Case Study Sections */
+.case-study-1 {
+    background-color: #5A83C4;
+    color: #F3EED8;
+}
+
+.case-study-2 {
+    background-color: #F3EED8;
+    color: #292929;
+}
+
+.text-section {
+    flex: 1;
+    color: inherit;
+    box-sizing: border-box;
+    font-size: inherit;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.preview-image {
+    width: 100%;
+    max-width: 512px;
+    aspect-ratio: 1; /* Ensures a square container */
+    overflow: hidden; /* Hides parts of the image outside the square */
+    position: relative; /* For absolute positioning of the image */
+    margin-top: 100px; /* Example margin for spacing */
+}
+
+.preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image to fit the square */
+    object-position: top; /* Aligns the top of the image to avoid cropping heads */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.category {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+    font-weight: 400;
+    line-height: 50px;
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-family: 'Big John PRO', sans-serif;
+    font-size: clamp(36px, 5vw, 70px);
+    font-weight: 400;
+    line-height: 62px;
+    text-transform: uppercase;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: inherit;
+}
+
+.subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 44px;
+    font-weight: 400;
+    margin-top: 15px;
+    color: inherit;
+}
+
+.case-study-button {
+    width: 205px;
+    height: 49px;
+    background-color: #292929;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #F3EED8; /* Text color */
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 30px;
+    text-align: center;
+    border: 2px solid #292929; /* Default stroke line matches background color */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.case-study-button-no-border {
+    width: 205px;
+    height: 49px;
+    background-color: #292929;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #F3EED8; /* Text color */
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 30px;
+    text-align: center;
+    border: 2px solid #292929; /* Default stroke line matches background color */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.case-study-button-no-border:hover {
+    background-color: #F3EED8; /* Invert to light background color */
+    color: #292929; /* Invert to dark text color */
+    transform: scale(1.05); /* Slightly scale up the button */
+    border: 1px solid #F3EED8; /* Change stroke line to match text color */
+    filter: none; /* Remove brightness adjustment */
+}
+
+.case-study-button:hover {
+    background-color: #F3EED8; /* Invert to light background color */
+    color: #292929; /* Invert to dark text color */
+    transform: scale(1.05); /* Slightly scale up the button */
+    border: 1px solid #292929; /* Change stroke line to match text color */
+    filter: none; /* Remove brightness adjustment */
+}
+
+/* About Me Section */
+.about-me-section {
+    width: 100%;
+    background-color: #231F20;
+    color: #F3EED8;
+    padding: 100px 12vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Align the two columns at the bottom */
+    box-sizing: border-box;
+    min-height: 100vh; /* Ensure the section spans the full viewport height */
+}
+
+.left-content {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push content to the bottom */
+    margin: 0; /* Remove unnecessary margin */
+    padding: 0; /* Remove unnecessary padding */
+}
+
+.left-content h1 {
+    font-family: 'Big John PRO', sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 1em;
+    text-transform: uppercase;
+    margin: 0;
+    color: inherit;
+}
+
+.left-content p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 1.5em;
+    color: inherit;
+    margin-bottom: 0; /* Ensure no additional space at the bottom */
+}
+
+.right-content {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align text and links to the right */
+    justify-content: flex-end; /* Push all content to the bottom */
+    text-align: right;
+    margin: 0; /* Remove unnecessary margin */
+    padding: 0; /* Remove unnecessary padding */
+}
+
+.right-content .cta-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(16px, 2vw, 28px);
+    margin: 0 0 20px 0; /* Maintain space below CTA text */
+}
+
+.right-content .links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Maintain spacing between links */
+    margin-bottom: clamp(1px, 2vw, 10px); 
+}
+
+.right-content .links a {
+    font-family: 'Big John PRO', sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 44px;
+    color: #F3EED8;
+}
+
+
+.right-content .cta-text {
+    font-size: clamp(18px, 1.8vw, 24px);
+    color: #F3EED8;
+    margin-bottom: 0.9px;
+}
+
+.links a {
+    font-family: 'Big John PRO', sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    text-transform: uppercase;
+    line-height: 0.9;
+    color: #F3EED8;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #5A83C4;
+}
+/* Footer Styling */
+.footer {
+    width: 100%;
+    background-color: #231F20; /* Dark background color */
+    color: #F3EED8; /* Light text color */
+    padding: 20px 12vw; /* Padding for spacing */
+    display: flex;
+    justify-content: space-between; /* Space between the two sections */
+    align-items: flex-start; /* Align items at the top */
+    font-family: 'DM Sans', sans-serif; /* Consistent font style */
+    font-size: clamp(14px, 1.2vw, 18px); /* Responsive font size */
+    box-sizing: border-box;
+}
+
+.footer div {
+    text-align: left; /* Align the left section */
+    line-height: 1.5em; /* Adjust line height for readability */
+}
+
+.footer div:nth-child(2) {
+    text-align: right; /* Align the right section */
+    line-height: 1.5em; /* Adjust for balanced vertical spacing */
+}
+/* Loading Overlay Styles */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(35, 31, 32, 0.9); /* Semi-transparent dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's above all other elements */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.loading-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Spinner Styles */
+.loading-spinner {
+    border: 16px solid #f3f3f3; /* Light grey background */
+    border-top: 16px solid #3498db; /* Blue color for the spinner */
+    border-radius: 50%; /* Make it circular */
+    width: 120px; /* Spinner diameter */
+    height: 120px;
+    animation: spin 0.5s linear infinite; /* Rotate the spinner */
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Scroll Button Styles */
+.scroll-button {
+    position: fixed;
+    bottom: 30px; /* Distance from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center alignment */
+    z-index: 1000; /* Ensure it's above other content */
+    cursor: pointer;
+    width: 50px; /* Button size */
+    height: 50px;
+    animation: bounce 2s infinite; /* Add a bouncing effect */
+}
+
+.scroll-button img {
+    width: 100%; /* Ensure the image fits the button */
+    height: auto;
+    object-fit: contain;
+    /* transform: rotate(270deg); */
+    opacity: 1;
+}
+
+/* Bouncing Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, 0); /* At rest */
+    }
+    50% {
+        transform: translate(-50%, -10px); /* Bounce up slightly */
+    }
+}
+
+
+/* Scroll Button Styles */
+#scrollButton {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+#scrollButton img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Visible State */
+#scrollButton.visible {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Make it visible */
+}
+
+
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .section-container, .about-me-section, .case-study-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: clamp(5px, 5vw, 40px); /* Responsive gap */
+        padding: clamp(40px, 8vw, 60px) clamp(5vw, 8vw, 10vw);
+    }
+
+    .preview-image {
+        padding: 0 15px;
+        max-width: 100%;
+        text-align: center;
+        margin-top: 0px;
+    }
+
+    .text-section {
+        padding: 0 40px;
+        max-width: 100%;
+        text-align: center;
+        margin-top: 0px;
+    }
+
+    .left-content, .right-content {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .preview-image {
+        order: -1;
+        margin-bottom: 20px; /* Add consistent margin for spacing */
+    }
+
+    .main-title {
+        font-size: clamp(28px, 6vw, 50px);
+        line-height: 1.2em; /* Adjust line height for better spacing */
+    }
+
+    .subtitle {
+        font-size: clamp(16px, 4vw, 22px);
+        line-height: 1.5em; /* Adjust line height for readability */
+    }
+
+    .category {
+        font-size: clamp(12px, 3vw, 16px);
+
+        line-height: 1.6em;
+        margin-top: 0;
+    }
+
+    .case-study-button {
+        width: clamp(140px, 50%, 200px);
+        height: clamp(35px, 8vh, 45px);
+        margin: 0 auto;
+        font-size: clamp(14px, 2.5vw, 18px);
+        line-height: 1.3em; /* Adjust line height for button text */
+    }
+
+    .case-study-button-no-border {
+        width: clamp(140px, 50%, 200px);
+        height: clamp(35px, 8vh, 45px);
+        margin: 0 auto;
+        font-size: clamp(14px, 2.5vw, 18px);
+        line-height: 1.3em; /* Adjust line height for button text */
+    }
+
+    .cta-text {
+        margin: 0 auto;
+        font-size: clamp(14px, 4vw, 18px);
+        line-height: 1.6em;
+        margin-top: 0;
+    }
+
+    .right-content .links {
+        gap: 5px; /* Reduce the gap between links */
+    }
+
+    .right-content .links a {
+        /* font-size: clamp(28px, 4vw, 36px); Reduce font size for smaller screens */
+        line-height: 0.8em; /* Reduce line height for closer spacing */
+        margin-top: 1px; /* Minimize top margin between links */
+    }
+
+    .footer {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Center-align items vertically */
+        padding: 10px 5vw; /* Reduce padding for smaller screens */
+        line-height: 0.8em;
+    }
+
+    .footer div {
+        margin-bottom: 10px; /* Add spacing between the two sections */
+    }
+
+    .footer div:first-child {
+        margin-bottom: 0; /* Remove extra margin for the last item */
+        justify-content: center;
+    }
+
+    .footer div:last-child {
+        margin-bottom: 0; /* Remove extra margin for the last item */
+        justify-content: center;
+    }
+
+    .footer div {
+        text-align: center; /* Align the left section */
+        line-height: 1.5em; /* Adjust line height for readability */
+    }
+
+}

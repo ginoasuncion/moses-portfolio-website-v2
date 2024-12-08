@@ -1,0 +1,81 @@
+/* Banner Section */
+.case-study-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 12vw;
+    background-color: #5A83C4; /* Banner background color */
+    color: #F3EED8; /* Text color */
+}
+
+.case-study-banner .text-section {
+    flex: 1;
+}
+
+.case-study-banner .main-title {
+    font-family: 'Big John PRO', sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    margin: 0 0 20px;
+}
+
+.case-study-banner .subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 1.2em;
+    margin-bottom: 20px;
+}
+
+.case-study-banner .case-study-button {
+    display: inline-block;
+    background-color: #292929;
+    color: #F3EED8;
+    border-radius: 30px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: clamp(16px, 1.5vw, 20px);
+    font-family: 'DM Sans', sans-serif;
+    text-align: center;
+}
+
+/* Case Study Sections */
+.case-study-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px 12vw;
+    gap: 50px;
+}
+
+.case-study-section .left-content {
+    flex: 1;
+    max-width: 300px;
+}
+
+.case-study-section .left-content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.case-study-section .right-content {
+    flex: 2;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .case-study-banner, .case-study-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 8vw;
+    }
+
+    .case-study-banner .preview-image {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .case-study-section {
+        gap: 30px;
+    }
+}

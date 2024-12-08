@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <section class="case-study-section" style="background-color: {{ 'blue' if title == 'Thorn Tree 2.0' else '#F3EED8' }};">
+        <div class="text-section">
+            <span class="category">{{ title }}</span>
+            <h1 class="main-title">{{ title }}</h1>
+            <p class="subtitle">{{ description }}</p>
+            <a href="/" class="case-study-button">
+                <p class="button-text">Go Back to Home</p>
+            </a>
+        </div>
+        <div class="preview-image">
+            <img src="{{ url_for('static', filename=image) }}" alt="{{ title }}">
+        </div>
+    </section>
+</body>
+</html>

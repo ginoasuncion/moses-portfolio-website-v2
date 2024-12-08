@@ -1,0 +1,1340 @@
+@font-face {
+    font-family: 'Big John PRO';
+    src: url('/static/fonts/BigJohn.otf') format('opentype'); /* Use absolute path */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('/static/fonts/DMSans.ttf') format('truetype'); /* Use the correct file path */
+    font-weight: 'normal';
+    font-style: normal;
+}
+
+/* Global Styles */
+body, html {
+    background-color: #F3F3F3; 
+    color: black;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    font-weight: 400;
+    line-height: 44px;
+}
+
+/* Common Section Styling */
+.section-container, .case-study-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12vw; /* Default horizontal padding */
+    gap: 50px; /* Default gap between items */
+    box-sizing: border-box; /* Default box model */
+    flex-direction: row;
+}
+
+/* Case Study Sections */
+.case-study-1 {
+    background-color: #F3EED8; /* Blue background */
+    color: #292929; /* Light text */
+}
+
+.text-section {
+    flex: 1;
+    color: inherit; /* Use text color from parent */
+    box-sizing: border-box;
+    font-size: inherit; /* Inherit global font size */
+    margin-top: 0px;
+}
+
+.preview-image {
+    width: 100%;
+    max-width: 512px;
+    aspect-ratio: 1; /* Ensures a square container */
+    overflow: hidden; /* Hides parts of the image outside the square */
+    position: relative; /* For absolute positioning of the image */
+    margin-top: 100px; /* Example margin for spacing */
+}
+
+.preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image to fit the square */
+    object-position: top; /* Aligns the top of the image to avoid cropping heads */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main-title {
+    font-family: 'Big John PRO', sans-serif;
+    font-size: clamp(36px, 5vw, 70px);
+    font-weight: 400;
+    line-height: 62px;
+    text-transform: uppercase;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: #292929; /* Light text */
+}
+
+.subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 44px;
+    margin-top: 15px;
+    color: #292929; /* Light text */
+}
+
+.details {
+    position: absolute;
+    bottom: clamp(100px, 5vh, 200px); /* Responsive spacing from the bottom */
+    left: clamp(8vw, 12vw, 15vw); /* Adjust based on parent padding */
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: clamp(14px, 1.5vw, 22px);
+    line-height: 32px;
+    color: #292929; /* Light text */
+    text-align: left;
+    max-width: 100%;
+}
+
+
+.details p {
+    margin: 5px 0; 
+}
+
+/* Two-Column Section Styling */
+.two-column-section {
+    display: flex; /* Use flexbox to align the columns */
+    justify-content: space-between; /* Add space between the columns */
+    align-items: flex-start; /* Align content at the top */
+    padding: 0 12vw; /* Match the padding of the banner */
+    background-color: #F3F3F3; /* Light gray background */
+    box-sizing: border-box;
+    gap: 50px; /* Space between left and right columns */
+
+}
+
+.column {
+    flex: 1; /* Each column takes up equal width */
+    box-sizing: border-box;
+    text-align: left; /* Align text to the left */
+    margin: 0; /* Remove any default margin */
+    padding-top: 75px;
+    margin-top: clamp(20px, 10vw, 75px);
+}
+
+/* Version 2: Small Spacing */
+.small-spacing .column {
+    padding-top: 30px; /* Reduced padding at the top */
+    margin-top: clamp(10px, 5vw, 30px); /* Reduced margin */
+}
+
+/* Version 2: Small Spacing */
+.small-spacing-bottom .column {
+    padding-bottom: 0px; /* Reduced padding at the top */
+    margin-bottom: 0px;
+}
+
+.left-column {
+    max-width: 50%; /* Ensure consistent width */
+}
+
+.left-column h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 44px;
+    font-weight: 400;
+    margin: 0; /* Remove default margin */
+    color: black; /* Dark text */
+}
+
+.right-column {
+    max-width: 50%; /* Ensure consistent width */
+}
+
+.right-column p {
+    font-family: 'DM Sans', sans-serif; /* Text font */
+    font-size: clamp(16px, 1.5vw, 20px); /* Responsive font size */
+    line-height: 32.78px; /* Spacing between lines */
+    color: black; /* Dark text */
+    margin: 0 0 clamp(1px, 10vw, 20px); /* Bottom margin for spacing between paragraphs */
+
+}
+
+.right-column p strong {
+    font-weight: 1400; /* Stronger boldness */
+    color: black; /* Ensure the bold text stands out */
+}
+
+
+.right-column h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 32.78px;
+    font-weight: 400;
+}
+
+.right-column ul {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 32.78px;
+    font-weight: 400;
+}
+
+.right-column ul li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 32.78px;
+    font-weight: 400;
+}
+
+.right-column ol li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 32.78px;
+    font-weight: 400;
+}
+
+.right-column strong {
+    font-weight: 1400; /* Stronger boldness */
+    color: #000; /* Ensure the bold stands out */
+}
+
+.left-column strong {
+    font-weight: 1400; /* Stronger boldness */
+    color: #000; /* Ensure the bold stands out */
+}
+
+
+/* Title Section */
+.title-section {
+    background-color: #F3F3F3; /* Match the mascot section background */
+    padding: 150px 12vw 30px; /* 150px top padding, minimal bottom padding */
+    box-sizing: border-box; /* Include padding in dimensions */
+}
+
+.title-container {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between the two columns */
+    align-items: center; /* Vertically align the title */
+    gap: 20px; /* Add minimal spacing between columns */
+}
+
+.title-container .left-column {
+    flex: 1; /* Left column takes one part of the space */
+    text-align: left; /* Align title to the left */
+}
+
+.title-container .right-column {
+    flex: 1; /* Optional column for additional content if needed */
+}
+
+
+.image-container {
+    flex: 1; /* Image container takes up one part of the space */
+}
+
+.image-container img {
+    width: 100%; /* Make image responsive */
+}
+
+.text-container {
+    flex: 2; /* Text container takes up two parts of the space */
+    font-size: 18px;
+    line-height: 1.8; /* Improve readability */
+}
+
+.text-container p {
+    margin-bottom: 20px; /* Add spacing between paragraphs */
+}
+
+
+
+/* Full-Width Multi-Photo Section */
+.multi-photo-section {
+    width: 100%; /* Occupy full width */
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 0; /* Remove gaps between images */
+    margin: 0; /* Remove margins */
+    overflow: hidden; /* Ensure no overflow issues */
+    background-color: #F3F3F3; /* Light gray background */
+}
+
+.multi-photo-section img {
+    width: 100%; /* Make each image fit its grid cell */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image fills the cell */
+    margin-top:  43px;
+    
+}
+
+/* Two-Column Section with Image */
+.two-column-with-photo-section {
+
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between columns */
+    align-items: flex-start; /* Align content at the top */
+    padding: 0 12vw; /* Horizontal padding */
+    background-color: #F3F3F3; /* Light gray background */
+    box-sizing: border-box; /* Ensure padding is included in dimensions */
+    gap: 50px; /* Space between columns */
+
+}
+
+.two-column-with-photo-section .column {
+    flex: 1; /* Equal width for columns */
+    box-sizing: border-box;
+    text-align: left; /* Align text to the left */
+    margin: 0; /* Remove extra margin */
+}
+
+.two-column-with-photo-section .left-column {
+    max-width: 50%; /* Restrict the left column width */
+}
+
+.two-column-with-photo-section .left-column h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 44px;
+    margin: 0 0 20px; /* Space below the title */
+    color: black; /* Dark text */
+}
+
+.two-column-with-photo-section .right-column {
+    max-width: 50%; /* Restrict the right column width */
+    display: flex;
+    flex-direction: column; /* Stack text and image vertically */
+    gap: 20px; /* Space between text and image */
+}
+
+.two-column-with-photo-section .right-column p {
+    font-family: 'DM Sans', sans-serif; /* Paragraph font */
+    font-size: clamp(16px, 1.5vw, 20px); /* Responsive font size */
+    line-height: 1.8; /* Line spacing */
+    color: #292929; /* Dark text */
+    margin: 0; /* Remove default margin */
+}
+
+.two-column-with-photo-section .right-column img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers its container */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.two-column-with-photo-section .left-column img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers its container */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+
+.persona-section .photo-container {
+    flex: 1;
+    max-width: 50%; /* Restrict the photo container width */
+}
+
+.persona-section {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the top */
+    padding: 50px 12vw;
+    background-color: #F3F3F3; /* Light gray background */
+    gap: 50px;
+    box-sizing: border-box;    
+}
+
+.photo-container img {
+    width: 500px; /* Make the photo responsive */
+    height: 400px; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop the image to fit the dimensions */
+    object-position: top; /* Anchor the cropped portion to the bottom */
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.persona-section .persona-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    color: black;
+    line-height: 44px;
+    margin-top: 5px;
+    padding-top: 0px;
+}
+
+.persona-section .content {
+    flex: 1;
+    max-width: 50%; /* Restrict the content width */
+    align-self: flex-start;
+    box-sizing: border-box;
+}
+
+.persona-section .content h2 {
+    font-family: 'Big John PRO', sans-serif; /* Title font */
+    font-size: clamp(24px, 2vw, 36px); /* Responsive title size */
+    line-height: 1.9;
+    color: #292929; /* Dark text */
+    margin-bottom: 20px;
+}
+
+.persona-section .content p {
+    font-family: 'DM Sans', sans-serif; /* Body font */
+    font-size: clamp(16px, 1.5vw, 20px); /* Responsive font size */
+    line-height: 1.8; /* Adjusted line height */
+    color: #292929;
+    margin-bottom: 20px;
+    
+}
+.persona-section .content h2, 
+.persona-section .content p {
+    margin-top: 0; /* Remove top margin for alignment */
+}
+
+
+.persona-section .content table {
+    width: 100%; /* Full-width table */
+    border-collapse: collapse; /* Remove space between cells */
+    font-family: 'DM Sans', sans-serif; /* Body font */
+    font-size: clamp(16px, 1.5vw, 20px); /* Responsive font size */
+    line-height: 1.8; /* Line height for spacing */
+    color: black;
+    table-layout: fixed; /* Ensures all columns have equal width */
+}
+
+
+.persona-section .content table th,
+.persona-section .content table td {
+    text-align: left; /* Align text to the left */
+    padding: 10px; /* Consistent padding */
+    border-top: 1px solid #ddd; /* Add top border for rows */
+    border-bottom: 1px solid #ddd; /* Add bottom border for rows */
+    border-left: none; /* Remove left border */
+    border-right: none; /* Remove right border */
+}
+
+.persona-section .content table th:first-child,
+.persona-section .content table td:first-child {
+    border-left: 1px solid #ddd; /* Add left border for the first column */
+}
+
+.persona-section .content table th:last-child,
+.persona-section .content table td:last-child {
+    border-right: 1px solid #ddd; /* Add right border for the last column */
+}
+
+.persona-section .content table th {
+    background-color: #f3f3f3; /* Light background for header cells */
+    font-weight: bold; /* Emphasize header text */
+    text-align: left; /* Left-align headers */
+}
+
+
+/* Onboarding Section Styling */
+.onboarding-section {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space between text and images */
+    align-items: center; /* Align items at the top */
+    padding: 50px 12vw; /* Horizontal and vertical padding */
+    background-color: #F3F3F3; /* Light gray background */
+    gap: 30px; /* Space between text and images */
+    box-sizing: border-box;
+}
+
+
+/* Left Column Styling */
+.onboarding-section .left-column {
+    flex: 1; /* Equal width for the column */
+    display: flex;
+    flex-direction: column; /* Stack text and persona label */
+    justify-content: flex-start;
+    /* gap: 20px; Space between text and persona */
+}
+
+
+.onboarding-section .left-column h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    font-weight: 400;
+    line-height: 44px;
+    color: black; /* Dark text */
+    margin-bottom: 10px;
+}
+
+.onboarding-section .left-column p {
+    font-family: 'DM Sans', sans-serif; /* Body font */
+    font-size: clamp(16px, 1.5vw, 20px); /* Responsive font size */
+    line-height: 1.8; /* Line height for spacing */
+    color: black; /* Dark text */
+    margin-bottom: 20px;
+}
+
+/* Persona Label Styling */
+.persona-label {
+    display: flex;
+    flex-direction: column; /* Stack image and label */
+    align-items: flex-start; /* Center-align content */
+    text-align: flex-start;
+    gap: 20px; /* Space between image and text */
+}
+
+.persona-label img {
+    width: 100px; /* Circular image size */
+    height: 100px; /* Match width for circle */
+    object-fit: cover; /* Ensure proper image fit */
+}
+
+.persona-label p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px); /* Responsive font size */
+    color: #292929;
+    margin: 0;
+    align-items: flex-start; /* Center-align content */
+    text-align: flex-start;
+}
+
+/* Right Column Styling */
+.onboarding-section .right-column {
+    flex: 2; /* Equal width for the column */
+    display: flex;
+    justify-content: center; /* Center the image block */
+    gap: 20px; /* Space between wireframes */
+}
+
+.onboarding-section .right-column img {
+    width: 100%; /* Responsive width */
+    max-width: 500px; /* Restrict max size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+/* Thread and Search Options Section */
+.thread-section {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space between the columns */
+    align-items: center; /* Align items at the top */
+    padding: 120px 12vw; /* Horizontal and vertical padding */
+    background-color: #F3F3F3; /* Light gray background */
+    gap: 30px; /* Space between text and images */
+    box-sizing: border-box;
+}
+
+/* Left Column Styling */
+.thread-section .left-column {
+    flex: 2; /* Slightly larger space for the images */
+    display: flex;
+    justify-content: space-between; /* Space between the two images */
+    gap: 20px; /* Add spacing between the images */
+}
+
+
+.thread-section .left-column img {
+    width: 100%; /* Make the images responsive */
+    max-width: 500px; /* Restrict max size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Right Column Styling */
+.thread-section .right-column {
+    flex: 1; /* Allocate space for the text */
+    display: flex;
+    flex-direction: column; /* Stack text and persona */
+    justify-content: flex-start;
+}
+
+.thread-section .right-column h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    font-weight: 400;
+    line-height: 44px;
+    color: black; /* Dark text */
+    margin-bottom: 10px;
+}
+
+.thread-section .right-column p {
+    font-family: 'DM Sans', sans-serif; /* Body font */
+    font-size: clamp(16px, 1.5vw, 20px); /* Responsive font size */
+    line-height: 1.8; /* Line height for spacing */
+    color: black; /* Dark text */
+    margin-bottom: 20px;
+}
+
+/* Distilling Research Section */
+.persona-label {
+    display: inline;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+}
+
+.persona-label-primary {
+    background-color: black;
+    color: white;
+    padding: 2.5px 10px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 44px;
+}
+
+.persona-label img {
+    width: 100px; /* Circular image size */
+    height: 100px; /* Match width for circle */
+    object-fit: cover; /* Ensure proper image fit */
+}
+
+.persona-label p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px); /* Responsive font size */
+    color: #292929;
+    margin: 0;
+    align-items: flex-start; /* Center-align content */
+    text-align: flex-start;
+}
+
+/* Text-Only Section Styling */
+.text-only-section {
+    padding: 30px 12vw; /* Add padding for spacing */
+    background-color: #F3F3F3; /* Light gray background */
+    text-align: left; /* Center-align the text */
+    box-sizing: border-box;
+    padding-top: clamp(20px, 10vw, 20px);
+    padding-bottom: clamp(20px, 100vw, 150px);
+}
+
+.text-only-section p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 44px;
+    color: black; /* Dark text color */
+    margin: 0; /* Remove default margins */
+}
+
+/* Two-Column Text with Full-Width Image Section */
+.structure-section {
+    background-color: #F3F3F3; /* Light gray background */
+    padding: 50px 12vw; /* Add padding for spacing */
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 44px;
+    padding-bottom: 5px; /* Reduce bottom padding */
+}
+
+.structure-section .content {
+    display: flex;
+    justify-content: space-between; /* Space between the columns */
+    align-items: flex-start; /* Align items at the top */
+    gap: 30px; /* Space between columns */
+    margin-bottom: 30px; /* Space between content and image */
+}
+
+.structure-section .content .left-column,
+.structure-section .content .right-column {
+    flex: 1; /* Equal width for both columns */
+}
+
+.structure-section .content .left-column h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 44px;
+    font-weight: 400;
+    color: #292929; /* Dark text */
+    margin-bottom: 15px;
+}
+
+.structure-section .content .left-column p,
+.structure-section .content .right-column p {
+    font-family: 'DM Sans', sans-serif; /* Paragraph font */
+    font-size: clamp(16px, 1.5vw, 20px); /* Responsive font size */
+    line-height: 1.8; /* Line height for better readability */
+    color: black; /* Dark text */
+    margin: 0;
+}
+
+.structure-section .content .right-column p {
+    text-align: left; /* Align text on the right */
+}
+
+/* Full-Width Image */
+.structure-section .image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center;
+    background-color: #F3F3F3; /* Match background */
+}
+
+.structure-section .image-container img {
+    width: 100%; /* Make image full-width */
+    max-width: 1200px; /* Restrict the maximum width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Key Learning Section */
+.distilling-research-section {
+    background-color: #F3F3F3; /* Light gray background */
+    padding: 50px 12vw; /* Add padding for spacing */
+    box-sizing: border-box; /* Ensure consistent box model */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between text and image+text */
+    gap: 30px; /* Space between columns */
+    align-items: flex-start; /* Align content to the top */
+    padding-bottom: clamp(20px, 10vw, 20px);
+}
+
+.distilling-research-section .text-content {
+    flex: 1; /* Occupies 50% of the width */
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 44px;
+    font-weight: 400;
+    margin-top: clamp(20px, 10vw, 75px);
+}
+
+.distilling-research-section .text-content h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 44px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: black; /* Dark text */
+}
+
+.distilling-research-section .text-content p {
+    font-family: 'DM Sans', sans-serif; /* Paragraph font */
+    font-size: clamp(16px, 1.5vw, 20px); /* Responsive font size */
+    line-height: 1.8; /* Line height for readability */
+    color: black; /* Dark text */
+    margin: 0;
+}
+
+.distilling-research-section .combined-content {
+    flex: 1; /* Occupies 50% of the width */
+    display: flex;
+    flex-direction: column; /* Stack text and image vertically */
+    gap: 50px; /* Space between text and image */
+}
+
+.distilling-research-section .combined-content p {
+    font-family: 'DM Sans', sans-serif; /* Paragraph font */
+    font-size: clamp(16px, 1.5vw, 20px); /* Responsive font size */
+    line-height: 1.8; /* Line height for readability */
+    font-weight: 400;
+    color: black; /* Dark text */
+}
+
+.distilling-research-section .combined-content .image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.distilling-research-section .combined-content .image-container img {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Key Learning Section */
+.key-learning-section {
+    background-color: #F3F3F3; /* Light gray background */
+    padding: 50px 12vw;
+    box-sizing: border-box; /* Ensure consistent box model */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between text and image+text */
+    gap: 30px; /* Space between columns */
+    align-items: flex-start; /* Align content to the top */
+    padding-bottom: clamp(20px, 10vw, 150px);
+    margin-top: 0;
+}
+
+.text-content {
+    flex: 1; /* Occupies 50% of the width */
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 44px;
+    font-weight: 400;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack child elements vertically */
+    justify-content: flex-start; /* Align text to the top */
+    text-align: left; /* Ensure text aligns to the left */
+}
+
+.key-learning-section .text-content {
+    flex: 1; /* Occupies 50% of the width */
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 44px;
+    font-weight: 400;
+}
+
+.key-learning-section .text-content h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 44px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: black; /* Dark text */
+}
+
+.key-learning-section .text-content p {
+    font-family: 'DM Sans', sans-serif; /* Paragraph font */
+    font-size: clamp(16px, 1.5vw, 20px); /* Responsive font size */
+    line-height: 1.8; /* Line height for readability */
+    color: #292929; /* Dark text */
+    margin: 0;
+}
+
+.key-learning-section .combined-content {
+    flex: 1; /* Occupies 50% of the width */
+    display: flex;
+    flex-direction: column; /* Stack text and image vertically */
+    gap: 50px; /* Space between text and image */
+}
+
+.key-learning-section .combined-content p {
+    font-family: 'DM Sans', sans-serif; /* Paragraph font */
+    font-size: clamp(16px, 1.5vw, 20px); /* Responsive font size */
+    line-height: 1.8; /* Line height for readability */
+    color: black; /* Dark text */
+}
+
+.key-learning-section .combined-content .image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.key-learning-section .combined-content .image-container img {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+/* Two-Column Section for Images */
+.two-image-section {
+    display: flex; /* Flexbox layout for side-by-side images */
+    justify-content: space-between; /* Space between columns */
+    align-items: center; /* Vertically align images */
+    padding: 50px 12vw; /* Consistent padding with other sections */
+    gap: 30px; /* Space between the two columns */
+    box-sizing: border-box; /* Include padding in size calculations */
+    background-color: #F3F3F3; /* Match background color with others */
+}
+
+/* Image Containers for Columns */
+.two-image-section .image-container {
+    flex: 1; /* Take up equal space for both images */
+    max-width: 100%; /* Keep images within their column width */
+    box-sizing: border-box; /* Include padding and borders */
+    display: flex;
+    justify-content: flex-start; /* Align images to the left */
+    align-items: center; /* Vertically align image content */
+    overflow: hidden; /* Prevent overflow if images are too large */
+    margin-left: 0;
+}
+
+/* Image Containers for Columns */
+.left-image-container {
+    flex: 1; /* Take up equal space for both images */
+    max-width: 100%; /* Keep images within their column width */
+    box-sizing: border-box; /* Include padding and borders */
+    display: flex;
+    justify-content: top; /* Align images to the left */
+    align-items: top; /* Vertically align image content */
+    overflow: hidden; /* Prevent overflow if images are too large */
+    margin-left: 0;
+}
+
+/* Images */
+.left-image-container img {
+    width: auto; /* Allow natural width of the image */
+    max-width: 100%; /* Ensure the image does not exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent clipping of images */
+    display: block; /* Remove inline spacing issues */
+}
+
+/* Images */
+.two-image-section .image-container img {
+    width: auto; /* Allow natural width of the image */
+    max-width: 100%; /* Ensure the image does not exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent clipping of images */
+    display: block; /* Remove inline spacing issues */
+}
+
+.two-column-section .image-container {
+    display: block;
+    width: 100%; /* Ensure the container takes up the full width of the column */
+    max-width: 600px; /* Restrict the image width */
+    overflow: hidden; /* Ensure the image doesn't overflow */
+    justify-content: flex-start; /* Align images to the left */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.two-column-section .image-container img {
+    width: 100%; /* Constrain the image to the width of the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image is contained within the boundaries */
+    display: block; /* Remove inline spacing issues */
+    margin-left: 0;
+}
+
+/* About Me Section */
+.about-me-section {
+    width: 100%;
+    background-color: #231F20;
+    color: #F3EED8;
+    padding: 100px 12vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Align the two columns at the bottom */
+    box-sizing: border-box;
+    min-height: 100vh; /* Ensure the section spans the full viewport height */
+    padding-top: 75px;
+    margin-top: clamp(20px, 10vw, 75px);
+}
+
+.left-content {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push content to the bottom */
+    margin: 0; /* Remove unnecessary margin */
+    padding: 0; /* Remove unnecessary padding */
+}
+
+.left-content h1 {
+    font-family: 'Big John PRO', sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 1em;
+    text-transform: uppercase;
+    margin: 0;
+    color: inherit;
+}
+
+.left-content p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    line-height: 1.5em;
+    color: inherit;
+    margin-bottom: 0; /* Ensure no additional space at the bottom */
+}
+
+.right-content {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align text and links to the right */
+    justify-content: flex-end; /* Push all content to the bottom */
+    text-align: right;
+    margin: 0; /* Remove unnecessary margin */
+    padding: 0; /* Remove unnecessary padding */
+}
+
+.right-content .cta-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(16px, 2vw, 28px);
+    margin: 0 0 20px 0; /* Maintain space below CTA text */
+}
+
+.right-content .links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Maintain spacing between links */
+    margin-bottom: clamp(1px, 2vw, 10px); 
+}
+
+.right-content .links a {
+    font-family: 'Big John PRO', sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 44px;
+    color: #F3EED8;
+}
+
+
+.right-content .cta-text {
+    font-size: clamp(18px, 1.8vw, 24px);
+    color: #F3EED8;
+    margin-bottom: 0.9px;
+}
+
+.links a {
+    font-family: 'Big John PRO', sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    text-transform: uppercase;
+    line-height: 0.9;
+    color: #F3EED8;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #5A83C4;
+}
+/* Footer Styling */
+.footer {
+    width: 100%;
+    background-color: #231F20; /* Dark background color */
+    color: #F3EED8; /* Light text color */
+    padding: 20px 12vw; /* Padding for spacing */
+    display: flex;
+    justify-content: space-between; /* Space between the two sections */
+    align-items: flex-start; /* Align items at the top */
+    font-family: 'DM Sans', sans-serif; /* Consistent font style */
+    font-size: clamp(14px, 1.2vw, 18px); /* Responsive font size */
+    box-sizing: border-box;
+}
+
+.footer div {
+    text-align: left; /* Align the left section */
+    line-height: 1.5em; /* Adjust line height for readability */
+}
+
+.footer div:nth-child(2) {
+    text-align: right; /* Align the right section */
+    line-height: 1.5em; /* Adjust for balanced vertical spacing */
+}
+
+/* Back Button Styles */
+.back-button {
+    position: fixed;
+    top: 50px; /* Distance from the top of the page */
+    left: 50px; /* Distance from the left of the page */
+    z-index: 1000; /* Ensure it stays on top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Adjust size */
+    height: 50px; /* Adjust size */
+    cursor: pointer;
+    filter: brightness(0.8); /* Make it slightly dimmed by default */
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.back-button img {
+    width: 100%; /* Ensure the image fills the button */
+    height: auto;
+    object-fit: contain;
+    filter: brightness(1); /* Default brightness for the image */
+}
+
+/* Hover Effect */
+.back-button:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    filter: brightness(1); /* Lighten the button on hover */
+}
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+
+    .section-container, .about-me-section, .case-study-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: clamp(5px, 5vw, 40px); /* Responsive gap */
+        padding: clamp(40px, 8vw, 60px) clamp(5vw, 8vw, 10vw);
+    }
+
+    .back-button {
+        width: 40px; /* Smaller size */
+        height: 40px;
+        top: 20px; /* Reduce distance from the top */
+        left: 20px; /* Reduce distance from the left */
+    }
+
+    .case-study-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: clamp(20px, 5vw, 40px); /* Responsive gap */
+        padding: clamp(40px, 8vw, 60px) clamp(5vw, 8vw, 10vw); /* Adjusted padding */
+    }
+
+    .text-section, .preview-image {
+        padding: 0 15px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .preview-image {
+        order: -1;
+        margin-bottom: 0px;
+    }
+    .main-title {
+        font-size: clamp(28px, 6vw, 50px);
+        line-height: 1.2;
+    }
+
+    .details {
+        bottom: 50px;
+        left: 8vw;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: clamp(14px, 4vw, 28px);
+        line-height: 1.5;
+    }
+
+    .two-column-section {
+        flex-direction: column; /* Stack columns vertically */
+        text-align: left; /* Keep text aligned to the left */
+        padding: 20px 5vw; /* Adjust padding for smaller screens */
+    }
+
+    .left-column, .right-column {
+        max-width: 100%; /* Full width for each column */
+        padding: 10px 0; /* Adjust padding */
+    }
+
+    .right-column p {
+        font-size: clamp(14px, 1.2vw, 18px); /* Smaller font size for mobile */
+    }
+
+    .two-column-with-photo-section {
+        flex-direction: column; /* Stack columns vertically */
+        padding: 20px 5vw; /* Adjust padding */
+    }
+
+    .two-column-with-photo-section .column {
+        max-width: 100%; /* Full width for each column */
+    }
+
+    .two-column-with-photo-section .right-column {
+        gap: 15px; /* Adjust gap between text and image */
+    }
+
+    .two-column-with-photo-section .right-column img {
+        width: 100%; /* Ensure image fits container */
+    }
+
+    .persona-section {
+        flex-direction: column; /* Stack photo and text vertically */
+        gap: 20px; /* Adjust gap */
+        padding: 20px 5vw; /* Adjust padding for smaller screens */
+    }
+
+    .persona-section
+    .persona-section .content {
+        max-width: 100%; /* Full width for smaller screens */
+        text-align: center; /* Center text for mobile */
+    }
+
+    .persona-section {
+        width: 80%; /* Smaller image for mobile */
+        margin: 0 auto; /* Center the image */
+    }
+
+    .persona-section .persona-label {
+        text-align: center; /* Center label text for mobile */
+    }
+
+    .onboarding-section {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 20px; /* Adjust spacing */
+        padding: 20px 5vw; /* Adjust padding for smaller screens */
+    }
+
+    .onboarding-section .left-column,
+    .onboarding-section .right-column {
+        max-width: 100%; /* Full width for smaller screens */
+    }
+
+    .onboarding-section .right-column img {
+        max-width: 100%; /* Ensure responsive images */
+    }
+
+    .thread-section {
+        flex-direction: column; /* Stack the columns vertically */
+        gap: 20px; /* Adjust spacing */
+        padding: 20px 5vw; /* Adjust padding for smaller screens */
+    }
+
+    .thread-section .left-column {
+        justify-content: center; /* Center-align the images */
+        gap: 10px; /* Reduce spacing for smaller screens */
+    }
+
+    .thread-section .left-column img {
+        max-width: 100%; /* Ensure images are responsive */
+    }
+
+    .thread-section .right-column {
+        align-items: center; /* Center-align the text */
+        text-align: center; /* Center-align content */
+    }
+
+    .persona-label img {
+        width: 80px; /* Adjust image size */
+        height: 80px;
+    }
+
+    .structure-section .content {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 20px; /* Reduce spacing */
+    }
+
+    .structure-section .content .left-column,
+    .structure-section .content .right-column {
+        text-align: center; /* Center-align text on smaller screens */
+    }
+
+    .structure-section .image-container img {
+        max-width: 100%; /* Ensure full responsiveness */
+    }
+
+    .key-learning-section {
+        flex-direction: column; /* Stack the left and right vertically */
+        gap: 20px; /* Reduce spacing */
+    }
+
+    .key-learning-section .text-content,
+    .key-learning-section .combined-content {
+        text-align: center; /* Center-align content for smaller screens */
+    }
+
+    .details {
+        position: static; /* Make it flow naturally within the layout */
+        margin: 20px 0; /* Add margin for spacing */
+        text-align: center; /* Center-align text */
+        padding: 0 5vw; /* Add horizontal padding */
+    }
+
+    .two-image-section {
+        flex-direction: column; /* Stack images vertically */
+        padding: 20px 5vw; /* Adjust padding for smaller screens */
+    }
+
+    .full-width-image-section {
+        flex-direction: column; /* Stack images vertically on smaller screens */
+    }
+
+    .full-width-image-section .image-container {
+        width: 100%; /* Ensure each image takes up full width */
+    }
+
+    .full-width-image-section .image-container img {
+        height: auto; /* Adjust height to maintain aspect ratio */
+    }
+
+    .two-image-section {
+        flex-direction: column; /* Stack images vertically */
+        gap: 20px; /* Add spacing between stacked images */
+    }
+
+    .two-image-section .image-container {
+        max-width: 100%; /* Allow images to take full width */
+    }
+
+    .left-content, .right-content {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-text {
+        margin: 0 auto;
+        font-size: clamp(14px, 4vw, 18px);
+        line-height: 1.6em;
+        margin-top: 0;
+    }
+
+    .right-content .links {
+        gap: 5px; /* Reduce the gap between links */
+    }
+
+    .right-content .links a {
+        /* font-size: clamp(28px, 4vw, 36px); Reduce font size for smaller screens */
+        line-height: 0.8em; /* Reduce line height for closer spacing */
+        margin-top: 1px; /* Minimize top margin between links */
+    }
+
+    .footer {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Center-align items vertically */
+        padding: 10px 5vw; /* Reduce padding for smaller screens */
+        line-height: 0.8em;
+    }
+
+    .footer div {
+        margin-bottom: 10px; /* Add spacing between the two sections */
+    }
+
+    .footer div:first-child {
+        margin-bottom: 0; /* Remove extra margin for the last item */
+        justify-content: center;
+    }
+
+    .footer div:last-child {
+        margin-bottom: 0; /* Remove extra margin for the last item */
+        justify-content: center;
+    }
+
+    .footer div {
+        text-align: center; /* Align the left section */
+        line-height: 1.5em; /* Adjust line height for readability */
+    }
+
+}
+
+.persona-label {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.persona-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove space between table cells */
+    text-align: left;
+}
+
+.persona-table th {
+    padding: 8px 12px;
+}
+
+.persona-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    color: black;
+    line-height: 44px;
+    margin-top: 5px;
+    padding-top: 0px;
+    font-weight: 400;
+}
+
+.persona-primary {
+    font-size: 1rem;
+    font-weight: normal;
+   
+}
+
+.persona-label-primary {
+    font-weight: normal;
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(18px, 2.5vw, 34px);
+    color: white;
+    line-height: 44px;
+    padding: 15px 30px; /* Adds padding inside the box */
+}

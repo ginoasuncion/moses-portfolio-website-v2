@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study - Thorn Tree 2.0</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='thorn_tree.css') }}">
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-button">
+        <img src="/static/images/Back Button.png" alt="Back Button">
+    </a>
+    <!-- Case Study 1: Thorn Tree 2.0 -->
+    <section class="case-study-section case-study-1">
+        <div class="text-section">
+            <h1 class="main-title">A NEW KIND OF TRAVEL FORUM</h1>
+            <p class="subtitle">Reliable, offline information for Gen Z backpackers.</p>
+        </div>
+        <div class="preview-image">
+            <img src="/static/images/thorn-tree-project-image.jpg" alt="Thorn Tree App Preview">
+        </div>
+        <!-- New section for details -->
+        <div class="details">
+            <p>Duration: 8 weeks</p>
+            <p>Category: Mobile app</p>
+            <p>Role: Researcher, UX/UI Designer</p>
+        </div>
+    </section>
+
+    <section id="introduction" class="two-column-section">
+        <div class="column left-column">
+            <h2>Introducing Thorn Tree 2.0</h2>
+        </div>
+        <div class="column right-column">
+            <p>
+                Thorn Tree 2.0 is an innovative travel app that caters to Gen Z backpackers, leveraging community input 
+                and advanced AI technology to deliver accurate, up-to-date travel advice and solutions. The application revives 
+                the spirit of Lonely Planet’s original Thorn Tree forum, adapting it to the needs and preferences of today’s young explorers.
+            </p>
+        </div>
+    </section>
+
+    <section class="two-column-section">
+        <div class="column left-column">
+            <h2>The Ask</h2>
+        </div>
+        <div class="column right-column">
+            <p>
+                Lonely Planet sought to create an application that provides Gen Z’ers with street-smart, correct, updated, and relevant travel information throughout the backpacking journey.
+            </p>
+        </div>
+    </section>
+    
+    <section class="two-column-section">
+        <div class="column left-column">
+            <h2>What we know about Gen Z</h2>
+        </div>
+        <div class="column right-column">
+            <p>
+                65% of Gen Z’ers feel more confident using community apps over feed-based apps according to a 2022 report by Impero Creative Agency.
+            </p>
+            <p>
+                Our research included qualitative interviews with 32 Gen Z backpackers, an analysis of existing travel platforms, and a review of the "Gen We and the Digital World" report by Impero Creative Agency. This approach ensured we understood our target audience's pain points, preferences, and behaviours.
+            </p>
+        </div>
+    </section>
+
+    <section class="multi-photo-section">
+        <img src="/static/images/genz1.jpg" alt="Photo 1">
+        <img src="/static/images/genz2.jpg" alt="Photo 2">
+        <img src="/static/images/genz3.jpg" alt="Photo 3">
+        <img src="/static/images/genz4.jpg" alt="Photo 4">
+    </section>
+
+    <section class="two-column-section">
+        <div class="column left-column">
+            <h2>Learning from our competitors</h2>
+        </div>
+        <div class="column right-column">
+            <p>
+                We examined popular platforms like Reddit, Discord, Quora, and Trip Advisor, identifying gaps in travel-specific, offline-accessible, and Gen Z-targeted content. The analysis highlighted a significant opportunity to modernise the Thorn Tree forum, making it more relevant and functional for Gen Z backpackers.
+                Gen Z backpackers prefer community-driven platforms for travel advice and need offline-accessible, summarised content. Few products in the market effectively combine these features.  
+            </p>
+            <div class="image-container">
+                <img
+                    src="/static/images/competitors_analysis.png"
+                    alt="Team Working Together"
+                    class="clickable-image"
+                >
+            </div>
+            <p>
+                Our research included qualitative interviews with 32 Gen Z backpackers, an analysis of existing travel platforms, and a review of the "Gen We and the Digital World" report by Impero Creative Agency. This approach ensured we understood our target audience's pain points, preferences, and behaviours.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Lightbox Overlay -->
+    <div class="lightbox-overlay" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img class="lightbox-image" id="lightbox-image" src="" alt="">
+    </div>
+    
+
+    <section class="distilling-research-section">
+        <!-- Left Text Content -->
+        <div class="text-content">
+            <h2>Distilling research into personas</h2>
+        </div>
+    </section>
+    
+    <section class="persona-section">
+    <div class="photo-container">
+        <img src="/static/images/Amy2.png" alt="Ask-for-Help Amy">
+        <div class="persona-label">
+            Ask-for-Help Amy 
+            <span class="persona-label-primary">(Primary)</span>
+        </div>
+    </div>
+    <div class="content">
+        <p>
+            "Before I try to solve it myself, I like to ask my friends, parents, and other travelers with more experience first."
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pain Points</th>
+                    <th>Workaround</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Feeling lost with too many options</td>
+                    <td>Create a list of top priorities to filter advice that aligns with her interests and needs</td>
+                </tr>
+                <tr>
+                    <td>Worries she’s missing out on the “best” stuff</td>
+                    <td>Remind herself that travel is personal; what works for others might not suit her</td>
+                </tr>
+                <tr>
+                    <td>Difficult to understand if the advice is good or bad</td>
+                    <td>Check multiple sources for consistency</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="persona-section">
+    <div class="photo-container">
+        <img src="/static/images/Dan2.png" alt="Do-It-Yourself Dan">
+        <div class="persona-label">Do-It-Yourself Dan</div>
+    </div>
+    <div class="content">
+        <p>
+            "I can usually figure it out myself by carefully planning and looking things up on social media and asking around in online forums."
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pain Points</th>
+                    <th>Workaround</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Difficulty in finding reliable or up-to-date information online</td>
+                    <td>Utilizing a combination of verified online sources and local advice for information</td>
+                </tr>
+                <tr>
+                    <td>Challenges with transportation, such as being overcharged by local drivers</td>
+                    <td>Using reputable transportation apps that offer fixed rates or sharing experiences in community groups for advice</td>
+                </tr>
+                <tr>
+                    <td>Trust issues with locals potentially exploiting tourists</td>
+                    <td>Building trust through community-based platforms with local insights</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="persona-section">
+    <div class="photo-container">
+        <img src="/static/images/Will2.png" alt="Whatever-She-Wants Will">
+        <div class="persona-label">Whatever-She-Wants Will</div>
+    </div>
+    <div class="content">
+        <p>
+            "Whatever my girlfriend decides is usually the best way to go for us, so I just let her take the lead. If she needs my help, I’m ready to engage though."
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pain Points</th>
+                    <th>Workaround</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Unfamiliar with planning or booking</td>
+                    <td>Relies on their girlfriend or travel partner entirely for these tasks</td>
+                </tr>
+                <tr>
+                    <td>Potential conflict during trips due to his passive attitude to planning</td>
+                    <td>When sufficiently pressured, he will start to make plans or suggestions</td>
+                </tr>
+                <tr>
+                    <td>Struggles when alone unless other people plan for him</td>
+                    <td>Tends to not do much unless others create a clear plan for him</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="two-column-section">
+    <div class="column left-column">
+        <h2>How might “Ask-For-Help Amy” find a motorbike rental in Bangkok?</h2>
+    </div>
+    <div class="column right-column">
+        <p>
+            The user journey begins with setting travel preferences, followed by browsing community-generated content, saving relevant information, and accessing it offline. Wireframes were developed to visualize these interactions, ensuring an intuitive and seamless user experience.
+        </p>
+    </div>
+</section>
+
+<section class="onboarding-section">
+    <!-- Left Column -->
+    <div class="left-column">
+        <h2>Onboarding</h2>
+        <p>
+            Amy, a new user, can "Get Started" without creating an account. The next page uses her location to provide tailored solutions based on her specific area.
+        </p>
+        <div class="persona-label">
+            <img src="/static/images/amy-mini-circle.png" alt="Ask-for-help Amy">
+            <p>Ask-for-help Amy</p> 
+        </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column">
+        <img src="/static/images/Step 1.png" alt="Thorn Tree Screen">
+    </div>
+</section>
+
+<section class="thread-section">
+    <!-- Left Column -->
+    <div class="left-column">
+        <img src="/static/images/Step 2.png" alt="Search Results">
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column">
+        <h2>Thread and search options</h2>
+        <p>
+            The main homepage displays Bangkok-related information based on Amy's location. The next screen offers
+            a search option with auto-suggestions for keywords, allowing Amy to find solutions to her specific problems.
+        </p>
+        <div class="persona-label">
+            <img src="/static/images/amy-mini-circle.png" alt="Ask-for-help Amy">
+            <p>Ask-for-help Amy</p>
+        </div>
+    </div>
+</section>
+
+<section class="onboarding-section">
+    <!-- Left Column -->
+    <div class="left-column">
+        <h2>Search result shown with topic filter option</h2>
+        <p>
+            The "Motorbike" search shows both "Information" and "Transportation" threads. Amy can then filter to view only "Information" posts, helping her find specific details about motorbike rentals.
+        </p>
+        <div class="persona-label">
+            <img src="/static/images/amy-mini-circle.png" alt="Ask-for-help Amy">
+            <p>Ask-for-help Amy</p>
+        </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column">
+        <img src="/static/images/Step 3.png" alt="Thorn Tree Screen">
+    </div>
+</section>
+
+<section class="thread-section">
+    <!-- Left Column -->
+    <div class="left-column">
+        <img src="/static/images/Step 4.png" alt="Search Results">
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column">
+        <h2>Create account and highlight comments to save</h2>
+        <p>
+            When Amy tries to interact with Thorn Tree features, she's prompted to create an account. After registering, she can highlight and save a specific comment by selecting it, which will then be stored on her "Highlighted" page for easy access later.
+        </p>
+        <div class="persona-label">
+            <img src="/static/images/amy-mini-circle.png" alt="Ask-for-help Amy">
+            <p>Ask-for-help Amy</p>
+        </div>
+    </div>
+</section>
+
+<section class="onboarding-section">
+    <!-- Left Column -->
+    <div class="left-column">
+        <h2>Saved content and create new thread or poll</h2>
+        <p>
+            The "Highlighted" page displays Amy's saved information, accessible even offline. In the following screen, Amy creates a new thread to ask her specific questions. This thread creation interface includes an option for her to add a TL;DR (Too Long; Didn't Read) summary of her post.
+        </p>
+        <div class="persona-label">
+            <img src="/static/images/amy-mini-circle.png" alt="Ask-for-help Amy">
+            <p>Ask-for-help Amy</p>
+        </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column">
+        <img src="/static/images/Step 5.png" alt="Thorn Tree Screen">
+    </div>
+</section>
+
+<section class="text-only-section">
+    <p>
+        Alright! Not only did we help Amy on her way, she now feels more confident doing things on her own.
+    </p>
+</section>
+
+<section class="two-column-section">
+    <div class="column left-column">
+        <h2>Structure of the app</h2>
+    </div>
+    <div class="column right-column">
+        <p>
+            Thorn Tree 2.0 provides a seamless navigation flow, covering onboarding, profile management,
+            content creation, and saved content. This clear organization ensures users can quickly access
+            desired information and functionalities.
+        </p>
+    </div>
+</section>
+
+<section class="structure-section">
+
+    <!-- Full-Width Image -->
+    <div class="image-container">
+        <img src="/static/images/Thorntree2-sitemap.png" alt="Structure of the app">
+    </div>
+</section>
+
+
+<section class="two-column-section">
+    <div class="column left-column">
+        <h2>The Ask</h2>
+    </div>
+    <div class="column right-column">
+        <p>
+            Lonely Planet sought to create an application that provides Gen Z’ers with street-smart, correct, updated, and relevant travel information throughout the backpacking journey.
+        </p>
+    </div>
+</section>
+
+<div class="two-image-section">
+    <!-- Left Image -->
+    <div class="image-container">
+      <img src="/static/images/Moodboard-colour.png" alt="Left Image">
+    </div>
+  
+    <!-- Right Image -->
+    <div class="image-container">
+      <img src="/static/images/Moodboard-Typeface.png" alt="Right Image">
+    </div>
+  </div>
+
+
+
+<section class="two-column-section">
+    <div class="column left-column">
+        <h2>Key Learning</h2>
+    </div>
+    <div class="column right-column">
+        <p>
+            Our key learning from this project is the importance of understanding the specific needs and behaviors
+            of the target audience. By focusing on community-driven content, offline access, and user engagement, 
+            we created a travel app that truly resonates with Gen Z backpackers.
+        </p>
+        <div class="image-container">
+            <img src="/static/images/key_learning.png" alt="Team Working Together">
+        </div>
+    </div>
+</section>
+
+<section class="two-column-section">
+    <div class="column left-column">
+        <h2>TL;DR</h2>
+    </div>
+    <div class="column right-column">
+        <p>
+            There is an opportunity to revive and modernise the THORN TREE forum by making it more relevant to Gen Z.
+        </p>
+    </div>
+</section>
+
+<section class="two-column-section">
+    <div class="column left-column">
+        <h2>Thanks to the Team</h2>
+    </div>
+    <div class="column right-column">
+        <p>
+            We couldn't have done this without the guidance of our professor, Irene Pereyra, who is also the co-founder of Anton & Irene Design Studio, and the support of my teammates. Our team, consisting of Yazar, Payal, Moses (myself), and Stafini, combined our diverse backgrounds and knowledge to collaboratively approach the development of this awesome project through all challenges.
+        </p>
+        <div class="image-container">
+            <img src="/static/images/team.png" alt="Team Working Together">
+        </div>
+    </div>
+</section>
+
+    <!-- About Me section -->
+    <section class="about-me-section">
+        <div class="left-content">
+            <h1>About Me</h1>
+            <p>A Bangkok-based UX/UI designer passionate about creating inclusive, user-friendly digital experiences. With 8+ years of creative and graphic design expertise, I’ve learned that great design is not just beautiful—it’s accessible and solves real problems for all users. My superpower? Listening deeply to feedback and crafting thoughtful solutions that meet both user and business needs.</p>
+            <p>Let’s collaborate and turn your digital vision into impactful experiences.</p>
+        </div>
+        <div class="right-content">
+            <p class="cta-text">Let’s catch up!</p>
+            <div class="links">
+                <a href="{{ url_for('static', filename='MinHtetZaw_Resume-September-v5-2024.pdf') }}" target="_blank" rel="noopener noreferrer">Resume</a>
+                <a href="https://www.linkedin.com/in/moses-min-htet-zaw" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:megaheartz9@gmail.com">Contact</a>
+                <a href="#">Prev.Work</a>
+            </div>            
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <div>Copyright © 2024<br><br>Min Htet Zaw & Xavier Eugenio Asuncion.<br>All rights reserved.</div>
+        <div>Bangkok, Thailand | 12:00:00 PM (GMT +7)<br><br><br></div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const timeElement = document.querySelector(".footer div:nth-child(2)");
+            if (timeElement) {
+                const currentTime = new Date().toLocaleTimeString("en-US", {
+                    timeZone: "Asia/Bangkok",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    second: "2-digit",
+                });
+                timeElement.textContent = `Bangkok, Thailand | ${currentTime} (GMT +7)`;
+            }
+        });
+
+            document.addEventListener("DOMContentLoaded", function () {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImage = document.getElementById("lightbox-image");
+            const closeBtn = document.getElementById("lightbox-close");
+
+            // Handle image click to open the lightbox
+            document.querySelectorAll(".clickable-image").forEach(image => {
+                image.addEventListener("click", function () {
+                    lightboxImage.src = this.src; // Set the image source
+                    lightbox.classList.add("active"); // Show the lightbox
+                });
+            });
+
+            // Handle close button click
+            closeBtn.addEventListener("click", function () {
+                lightbox.classList.remove("active"); // Hide the lightbox
+            });
+
+            // Close the lightbox when clicking outside the image
+            lightbox.addEventListener("click", function (event) {
+                if (event.target === lightbox) {
+                    lightbox.classList.remove("active");
+                }
+            });
+        });
+
+
+        // Scroll button functionality
+        (function () {
+            const scrollButton = document.getElementById("scrollButton");
+            if (scrollButton) {
+                // Check initial scroll position
+                if (window.scrollY > 50) {
+                    scrollButton.classList.add("hidden");
+                } else {
+                    scrollButton.classList.remove("hidden");
+                }
+            }
+        })();
+    
+        document.addEventListener("DOMContentLoaded", function () {
+                const scrollButton = document.getElementById("scrollButton");
+                const nextSection = document.getElementById("introduction");
+
+                if (scrollButton) {
+                    // Function to toggle visibility based on scroll position
+                    function toggleScrollButtonVisibility() {
+                        if (window.scrollY > 50) {
+                            scrollButton.classList.remove("visible");
+                            scrollButton.classList.add("hidden");
+                        } else {
+                            scrollButton.classList.remove("hidden");
+                            scrollButton.classList.add("visible");
+                        }
+                    }
+
+                    // Run the toggle function immediately to avoid flashing
+                    toggleScrollButtonVisibility();
+
+                    // Add click event for smooth scrolling
+                    scrollButton.addEventListener("click", function () {
+                        nextSection.scrollIntoView({ behavior: "smooth" });
+                    });
+
+                    // Add scroll event listener to toggle visibility
+                    window.addEventListener("scroll", toggleScrollButtonVisibility);
+                }
+            });
+
+    </script>
+
+
+</body>
+</html>

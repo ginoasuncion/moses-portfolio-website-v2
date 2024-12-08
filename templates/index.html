@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Htet Zaw</title>
+    
+    <!-- Load p5.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
+    <!-- Link to your custom p5.js sketch -->
+    <script src="{{ url_for('static', filename='sketch.js') }}"></script>
+    <!-- Link to external CSS -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    <!-- Scroll Button -->
+    <div class="scroll-button" id="scrollButton">
+        <img src="/static/images/Group 40.svg" alt="Scroll Down">
+    </div>
+
+    <!-- p5.js sketch section -->
+    <section id="sketch-container">
+        <div id="banner"></div>
+    </section>
+
+    <!-- Case Study 1: Thorn Tree 2.0 -->
+    <section id="case-study1" class="case-study-section case-study-1">
+        <div class="text-section">
+            <span class="category">THORN TREE 2.0</span>
+            <h1 class="main-title">A NEW KIND OF TRAVEL FORUM</h1>
+            <p class="subtitle">Reliable, offline information for Gen Z backpackers.</p>
+            <a href="/thorn-tree" class="case-study-button-no-border case-study-link">
+                <p class="button-text">Read Case Study</p>
+            </a>
+        </div>
+        <div class="preview-image">
+            <img src="/static/images/thorn-tree-project-image.jpg" alt="Thorn Tree App Preview">
+        </div>
+    </section>
+
+    <!-- Case Study 2: The Adaptive City -->
+    <section class="case-study-section case-study-2">
+        <div class="text-section">
+            <span class="category">UX SOLUTION</span>
+            <h1 class="main-title">The Adaptive City</h1>
+            <p class="subtitle">Redefining public spaces as centres for collaboration and environmental awareness.</p>
+            <a href="/adaptive-city" class="case-study-button case-study-link">
+                <p class="button-text">Read Case Study</p>
+            </a>
+        </div>
+        <div class="preview-image">
+            <img src="/static/images/adaptive-city.jpg" alt="Thorn Tree App Preview">
+        </div>
+    </section>
+
+    <!-- About Me section -->
+    <section class="about-me-section">
+        <div class="left-content">
+            <h1>About Me</h1>
+            <p>A Bangkok-based UX/UI designer passionate about creating inclusive, user-friendly digital experiences. With 8+ years of creative and graphic design expertise, I’ve learned that great design is not just beautiful—it’s accessible and solves real problems for all users. My superpower? Listening deeply to feedback and crafting thoughtful solutions that meet both user and business needs.</p>
+            <p>Let’s collaborate and turn your digital vision into impactful experiences.</p>
+        </div>
+        <div class="right-content">
+            <p class="cta-text">Let’s catch up!</p>
+            <div class="links">
+                <a href="{{ url_for('static', filename='MinHtetZaw_Resume-September-v5-2024.pdf') }}" target="_blank" rel="noopener noreferrer">Resume</a>
+                <a href="https://www.linkedin.com/in/moses-min-htet-zaw" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:megaheartz9@gmail.com">Contact</a>
+                <a href="https://linktr.ee/minhtetzaw" target="_blank" rel="noopener noreferrer">Prev.Work</a>
+            </div>            
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <div>Copyright © 2024<br><br>Min Htet Zaw & Xavier Eugenio Asuncion.<br>All rights reserved.</div>
+        <div>Bangkok, Thailand | 12:00:00 PM (GMT +7)<br><br><br></div>
+    </footer>
+    <script>
+        // Footer time update
+        document.addEventListener("DOMContentLoaded", function () {
+            const timeElement = document.querySelector(".footer div:nth-child(2)");
+            if (timeElement) {
+                function updateTime() {
+                    const currentTime = new Date().toLocaleTimeString("en-US", {
+                        timeZone: "Asia/Bangkok",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        second: "2-digit",
+                    });
+                    timeElement.textContent = `Bangkok, Thailand | ${currentTime} (GMT +7)`;
+                }
+                updateTime(); // Update immediately on load
+                setInterval(updateTime, 1000); // Update every second
+            }
+        });
+    
+        // Case study loading overlay
+        document.addEventListener("DOMContentLoaded", function () {
+            const caseStudyLinks = document.querySelectorAll(".case-study-link");
+            const loadingOverlay = document.getElementById("loadingOverlay");
+    
+            caseStudyLinks.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent immediate navigation
+    
+                    // Show the loading overlay
+                    loadingOverlay.classList.add("active");
+    
+                    // Navigate to the page after a short delay
+                    const targetURL = this.getAttribute("href");
+                    setTimeout(() => {
+                        window.location.href = targetURL;
+                    }, 1000); // Delay in milliseconds
+                });
+            });
+        });
+    
+        // Scroll button functionality
+        (function () {
+            const scrollButton = document.getElementById("scrollButton");
+            if (scrollButton) {
+                // Check initial scroll position
+                if (window.scrollY > 50) {
+                    scrollButton.classList.add("hidden");
+                } else {
+                    scrollButton.classList.remove("hidden");
+                }
+            }
+        })();
+    
+        document.addEventListener("DOMContentLoaded", function () {
+    const scrollButton = document.getElementById("scrollButton");
+    const nextSection = document.getElementById("case-study1");
+
+    if (scrollButton) {
+        // Function to toggle visibility with fade-in/fade-out effect
+        function toggleFadeVisibility() {
+            if (!scrollButton.classList.contains("hidden")) {
+                scrollButton.classList.toggle("visible"); // Add/remove the "visible" class
+            }
+        }
+
+        // Function to handle visibility based on scroll position
+        function handleScrollVisibility() {
+            if (window.scrollY > 50) {
+                scrollButton.classList.remove("visible");
+                scrollButton.classList.add("hidden");
+            } else {
+                scrollButton.classList.remove("hidden");
+                scrollButton.classList.add("visible");
+            }
+        }
+
+        // Smooth scrolling to the next section
+        scrollButton.addEventListener("click", function () {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        });
+
+        // Add scroll event listener for visibility
+        window.addEventListener("scroll", handleScrollVisibility);
+
+        // Initial fade-in after 7 seconds, then toggle every 7 seconds
+        setTimeout(() => {
+            toggleFadeVisibility(); // First fade-in
+            setInterval(toggleFadeVisibility, 5000); // Toggle every 7 seconds
+        }, 5000);
+
+        // Initial scroll visibility check
+        handleScrollVisibility();
+    }
+});
+
+
+
+    </script>
+    
+
+    <!-- Ensure the p5.js sketch renders in #sketch-container -->
+    <script>
+        function setup() {
+            let canvas = createCanvas(windowWidth, windowHeight);
+            canvas.parent('sketch-container'); // Attach canvas to sketch-container section
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+
+        function scrollToNextSection() {
+            const nextSection = document.getElementById('case-study-1');
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
